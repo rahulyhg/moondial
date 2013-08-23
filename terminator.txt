@@ -1,0 +1,18 @@
+asin(sin(lat) * sin(decl) + cos(lat) * cos(decl) * cos(H)) == 0
+sin(lat) * sin(decl) + cos(lat) * cos(decl) * cos(H) == 0
+sin(lat) * sin(decl) == -cos(lat) * cos(decl) * cos(H)
+sin(lat) / cos(lat) == -cos(decl) * cos(H) / sin(decl)
+tan(lat) == -cos(H) / tan(decl)
+lat = atan(-cos(lon) / tan(decl))
+cos(H) = -tan(decl) * tan(lat)
+lon = acos(-tan(decl) * tan(lat))
+
+A = atan(sin(H) / (cos(H) * sin(lat) - tan(decl) * cos(lat)))
+h = asin(sin(lat) * sin(decl) + cos(lat) * cos(decl) * cos(H))
+
+A = atan(sin(H) / (cos(H) * sin(lat)))
+sin(H) / (cos(H) * sin(lat)) = tan(A)
+tan(H) / sin(lat) = tan(A)
+sin(lat) = tan(H) / tan(A)
+lat = asin(tan(H) / tan(A))
+lon = acos(-tan(decl) * tan(lat))
